@@ -20,6 +20,6 @@ sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable
 
 apt-get update
 
-apt-get install -y htop tmux python3 code docker-ce 
+apt-get install -y htop tmux python3 golang code docker-ce 
 
 
