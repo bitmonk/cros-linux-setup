@@ -36,4 +36,7 @@ Run the setup.sh script:
 
   sudo sh setup.sh
 
+# Debugging
 
+vsh termina
+lxc exec penguin -- /bin/login -f justinalanryan
