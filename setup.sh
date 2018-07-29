@@ -19,8 +19,11 @@ curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microso
 mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
 sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 
+apt-add-repository ppa:ansible/ansible
+
 apt-get update
 
-apt-get install -y htop tmux python3 golang code docker-ce 
+apt-get install -y htop tmux python3 golang code docker-ce ansible
 
-
+git config --global user.email "justin.alan.ryan@gmail.com"
+git config --global user.name "Justin Alan Ryan"
