@@ -25,5 +25,8 @@ apt-get update
 
 apt-get install -y htop tmux python3 golang code docker-ce ansible
 
+curl -O https://packages.chef.io/files/stable/chefdk/3.1.0/debian/9/chefdk_3.1.0-1_amd64.deb
+dpkg -i chefdk_3.1.0-1_amd64.deb
+
 git config --global user.email "justin.alan.ryan@gmail.com"
 git config --global user.name "Justin Alan Ryan"
