@@ -1,0 +1,35 @@
+---
+
+
+- name: setup useful tools not installed by default in termina
+  hosts: localhost
+  become: yes
+
+  tasks:
+  - name: install packages
+    apt:
+      name: "{{ packages }}"
+    vars:
+        packages:
+        - htop
+        - tmux
+        - python3
+        - golang
+        - apt-transport-https
+        - ca-certificates
+        - curl
+        - software-properties-common
+        - gnupg
+        - build-essential
+        - libncurses5-dev
+        - bison
+        - flex
+        - file
+        - libelf-dev
+        - libssl-dev
+        - bc
+        - dnsutils
+        - bind9-host
+  - include_tasks: chefdk.yml
+  - include_tasks: docker.yml
+

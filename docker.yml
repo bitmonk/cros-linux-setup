@@ -1,0 +1,20 @@
+---
+
+- name: add docker.io apt repository
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/debian {{ ansible_distribution_release }} stable
+- name: install docker package
+  apt:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - docker
+- name: enable / start service docker
+  service:
+    name: docker
+    enabled: yes
+    state: started
+- name: add current user to docker group
+  user:
+    name: "{{ lookup('env','USER') }}"
+    groups: docker
