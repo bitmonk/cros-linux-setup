@@ -1,5 +1,7 @@
 ## My crouton setup
 
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 # Setup crouton + chroot
 
 Download crouton from https://github.com/dnschneid/crouton,
