@@ -23,7 +23,7 @@ apt-add-repository -y ppa:ansible/ansible
 
 apt-get update
 
-apt-get install -y htop tmux python3 golang code docker-ce ansible
+apt-get install -y htop tmux python3 golang code docker-ce ansible cmake qemu file
 
 curl -O https://packages.chef.io/files/stable/chefdk/3.1.0/debian/9/chefdk_3.1.0-1_amd64.deb
 dpkg -i chefdk_3.1.0-1_amd64.deb
