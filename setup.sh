@@ -23,7 +23,7 @@ sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable
 
 apt-get update
 
-apt-get install -y htop tmux python3 golang code docker-ce ansible cmake qemu file
+apt-get install -y htop tmux python3-virtualenv python3-pip golang code docker-ce ansible cmake qemu file
 
 curl -O https://packages.chef.io/files/stable/chefdk/3.1.0/debian/9/chefdk_3.1.0-1_amd64.deb
 dpkg -i chefdk_3.1.0-1_amd64.deb
