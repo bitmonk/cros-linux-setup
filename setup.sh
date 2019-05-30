@@ -23,7 +23,7 @@ sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode s
 
 sudo apt-get update
 
-sudo apt-get install -y htop tmux python3-virtualenv python3-pip golang code docker-ce ansible cmake qemu file iputils-ping
+sudo apt-get install -y htop tmux python3-virtualenv python3-pip golang php composer code docker-ce ansible cmake qemu file iputils-ping
 
 curl -O https://packages.chef.io/files/stable/chefdk/3.1.0/debian/9/chefdk_3.1.0-1_amd64.deb
 sudo dpkg -i chefdk_3.1.0-1_amd64.deb
