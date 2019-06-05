@@ -4,6 +4,8 @@ if [ "$(whoami)" != "root" ]; then
     SUDO=sudo
 fi
 
+DISTRO=ubuntu
+
 ${SUDO} apt-get update
 
 ${SUDO} apt-get install -y \
@@ -13,9 +15,9 @@ ${SUDO} apt-get install -y \
     software-properties-common \
     gnupg \
 
-curl -fsSL https://download.docker.com/linux/debian/gpg | ${SUDO} apt-key add -
+curl -fsSL https://download.docker.com/linux/${DISTRO}/gpg | ${SUDO} apt-key add -
 ${SUDO} add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/debian \
+   "deb [arch=amd64] https://download.docker.com/linux/${DISTRO} \
    $(lsb_release -cs) \
    stable"
 
@@ -27,8 +29,12 @@ ${SUDO} sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscod
 
 ${SUDO} apt-get -y install apt-transport-https lsb-release ca-certificates
 ${SUDO} wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
-${SUDO} sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
-${SUDO} apt-get update
+
+if [ "${DISTRO}" = "debian" ]; then
+  ${SUDO} sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
+elif [ "${DISTRO}" = "ubuntu" ]; then
+  ${SUDO} add-apt-repository ppa:ondrej/php
+fi
 
 ${SUDO} apt-get update
 
