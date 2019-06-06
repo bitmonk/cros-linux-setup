@@ -38,7 +38,9 @@ fi
 
 ${SUDO} apt-get update
 
-${SUDO} apt-get install -y htop tmux python3-virtualenv python3-pip golang php7.2-cli php7.2-curl composer code docker-ce ansible cmake qemu file iputils-ping awscli
+${SUDO} apt-get install -y htop tmux python3-virtualenv python3-pip golang php7.2-cli php7.2-curl composer code docker-ce ansible cmake qemu file iputils-ping awscli strace lsof
+
+${SUDO} apt-get install -y php7.2-apcu php7.2-mysql php7.2-redis php7.2-sqlite3 php7.2-xml php7.2-mbstring php7.2-intl php7.2-bcmath 
 
 if [ ! -f chefdk_3.1.0-1_amd64.deb ]; then
   curl -O https://packages.chef.io/files/stable/chefdk/3.1.0/debian/9/chefdk_3.1.0-1_amd64.deb;
