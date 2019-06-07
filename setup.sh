@@ -50,3 +50,8 @@ fi
 git config --global user.email "justin.alan.ryan@gmail.com"
 git config --global user.name "Justin Alan Ryan"
 cp -r bin ~/bin
+
+cat << EOF >> ~/.profile
+  source ~/bin/fixssh
+  alias sshup='eval `ssh-agent` && ssh-add && grabssh'
+ EOF
