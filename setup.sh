@@ -43,13 +43,17 @@ ${SUDO} systemctl enable --now code-server@$USER
 
 ${SUDO} apt-get update
 
-${SUDO} apt-get install -y htop tmux python3-virtualenv python3-pip golang composer code docker-ce ansible cmake qemu file iputils-ping awscli strace lsof unison dnsutils iotop net-tools
+${SUDO} apt-get install -y htop tmux python3-virtualenv python3-pip golang composer code docker-ce ansible cmake qemu file iputils-ping awscli strace lsof unison dnsutils iotop net-tools mosh
 
 # gcp sdk
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 sudo apt-get update && sudo apt-get install google-cloud-sdk
 
+#terraform
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+${SUDO} apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+${SUDO} apt-get install terraform
 
 #${SUDO} apt-get install -y php7.2-cli php7.2-curl php7.2-apcu php7.2-mysql php7.2-redis php7.2-sqlite3 php7.2-xml php7.2-mbstring php7.2-intl php7.2-bcmath 
 
